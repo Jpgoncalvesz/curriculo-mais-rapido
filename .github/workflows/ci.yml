@@ -18,6 +18,13 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npm run build
+      - name: Verificar saída para Vercel pela raiz
+        run: node -e "const fs=require('node:fs'); for(const f of ['dist/index.html','dist/favicon.ico','dist/favicon-movimento.svg','dist/curriculo-mais-rapido-extensao.zip']) if(!fs.existsSync(f)) throw Error('Arquivo ausente '+f)"
+        working-directory: .
+      - name: Compilar para Vercel pela pasta frontend
+        run: npm run build -- --outDir dist
+      - name: Verificar saída para Vercel pela pasta frontend
+        run: node -e "const fs=require('node:fs'); for(const f of ['dist/index.html','dist/favicon.ico','dist/favicon-movimento.svg','dist/curriculo-mais-rapido-extensao.zip']) if(!fs.existsSync(f)) throw Error('Arquivo ausente '+f)"
       - run: npm audit --omit=dev --audit-level=high
       - run: node --test extension/scan.test.cjs extension/fill.test.cjs
         working-directory: .

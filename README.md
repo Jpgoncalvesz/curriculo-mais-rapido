@@ -87,6 +87,12 @@ O site estático compilado fica em `dist/` na raiz. O pacote Java fica em `backe
 
 ## Publicação
 
+### Vercel
+
+O repositório inclui `vercel.json` na raiz e em `frontend`. Importe o projeto com **Root Directory** vazio/`.` (recomendado) ou `frontend`; a configuração correspondente define os comandos e a pasta de saída. Use Node.js 22.x e deixe `VITE_API_URL` sem valor para processar currículos no navegador. Veja o [guia completo de implantação na Vercel](docs/VERCEL.md), incluindo a correção para “No Output Directory named dist found”.
+
+### API e outros ambientes
+
 O site estático pode ser servido por um host HTTPS. A API Java precisa de um ambiente JVM ou de contêiner separado; o host Sites usado neste projeto não executa JVM. Para uma instalação completa, sirva o front-end e encaminhe `/api` para a API Java através de um proxy HTTPS. Configure `SERVER_ADDRESS=0.0.0.0`, `PORT` e `ALLOWED_ORIGIN` no servidor. Configure `VITE_API_URL=/api` **antes** da compilação. Não aponte uma versão pública para `localhost`.
 
 A API entregue é uma extração sem contas nem banco de dados. Antes de disponibilizar um serviço Java público compartilhado, configure autenticação ou cotas, limite de requisições, timeout do processamento, atualizações de dependências e isolamento de arquivos. Não exponha diretamente a porta de desenvolvimento.
