@@ -1,0 +1,34 @@
+/* Navigation: illustrated icon tiles and clear labels at every breakpoint. */
+.sidebar{padding-left:17px;padding-right:17px}
+.sidebar .brand{margin-left:5px}
+.sidebar .workspace-label{font-size:8px;letter-spacing:1.4px;margin:46px 11px 18px;color:var(--muted)}
+.sidebar nav{gap:10px}
+.sidebar nav .nav-item{position:relative;padding:11px 9px;gap:10px;border:1px solid transparent;border-radius:12px;transition:background .18s,border-color .18s,transform .18s}
+.sidebar nav .nav-item:hover{background:var(--soft);transform:translateX(2px);filter:none}
+.sidebar nav .nav-item.active{background:var(--green-soft);border-color:#83b69a38;box-shadow:0 3px 10px #163e2510}
+.nav-icon{width:35px;height:38px;display:grid;place-items:center;flex-shrink:0;border:1px solid #ffffff80;border-radius:11px;box-shadow:0 2px 4px #19332206;transition:transform .18s}
+.nav-item:hover .nav-icon{transform:rotate(-5deg)}
+.nav-mint{background:#dcefe4;color:#247756}
+.nav-amber{background:#fbedd0;color:#a37421}
+.nav-lilac{background:#ede7fa;color:#8262ac}
+.nav-copy{min-width:0;display:flex;flex-direction:column;gap:5px;text-align:left}
+.nav-copy strong{font-size:11px;font-weight:650;color:var(--text);letter-spacing:-.15px}
+.nav-copy small{font-size:7.5px;line-height:1.5;font-weight:400;color:var(--muted);white-space:normal}
+.nav-item.active .nav-copy strong{color:var(--green)}
+.sidebar nav .nav-chevron{margin-left:auto;color:var(--muted);width:12px;flex-shrink:0;opacity:.6}
+.sidebar nav .active .nav-chevron{color:var(--green);opacity:1}
+.sidebar-import{display:flex;align-items:center;gap:9px;background:transparent;border:1px dashed #b2c5b8;color:var(--green);border-radius:10px;padding:12px 13px;font-size:10px;font-weight:600;margin:22px 5px 18px;transition:background .18s}
+.sidebar-import:hover{background:var(--green-soft)}
+.sidebar-import>svg:last-child{margin-left:auto;opacity:.6}
+.sidebar .side-card{background:linear-gradient(140deg,var(--soft),var(--green-soft));border-radius:15px;margin-left:5px;margin-right:5px;overflow:hidden;position:relative}
+.sidebar .side-card:after{content:'';position:absolute;width:95px;height:95px;border:1px solid #85aa8f26;border-radius:50%;top:-30px;right:-35px;pointer-events:none}
+.sidebar .tiny-icon{display:flex;width:41px;height:41px;background:var(--surface);align-items:center;justify-content:center;border:1px solid var(--line);border-radius:13px;position:relative;margin-bottom:17px;box-shadow:0 4px 10px #163e2506}
+.tiny-spark{position:absolute;right:-8px;top:-10px;color:#ad994f;font-size:17px}
+[data-theme=dark] .nav-mint{background:#234c38;color:#95dbb4;border-color:#3a664b}
+[data-theme=dark] .nav-amber{background:#493e25;color:#ecd08b;border-color:#655430}
+[data-theme=dark] .nav-lilac{background:#3c3150;color:#cfb3ef;border-color:#55436d}
+[data-theme=dark] .sidebar-import{border-color:#476150}
+@media(max-width:1150px) and (min-width:901px){.sidebar{padding-left:11px;padding-right:11px}.sidebar nav .nav-item{gap:8px;padding:10px 7px}.nav-icon{width:31px;height:35px}.nav-copy strong{font-size:10px}.nav-copy small{font-size:7px}.sidebar nav .nav-chevron{display:none}.sidebar .workspace-label{font-size:7px;letter-spacing:1px;margin-left:10px}}
+@media(max-width:900px) and (min-width:701px){.sidebar{padding-left:10px;padding-right:10px}.sidebar .brand{margin:0}.sidebar nav .nav-item{justify-content:center;padding:7px 0}.nav-copy,.sidebar nav .nav-chevron{display:none}.nav-icon{width:36px;height:39px}.sidebar-import{padding:10px;justify-content:center;margin:19px 0}.sidebar-import span,.sidebar-import>svg:last-child{display:none}.sidebar .side-card{display:none}.sidebar nav{margin-top:36px}}
+@media(max-width:700px){.sidebar{padding:15px 16px}.sidebar .brand{margin:0}.sidebar nav{gap:5px;margin:0}.sidebar nav .nav-item{padding:5px;border-radius:11px;gap:0}.nav-icon{width:30px;height:32px;border-radius:9px;box-shadow:none}.sidebar nav .nav-icon svg{width:16px;height:16px}.nav-copy,.sidebar nav .nav-chevron,.sidebar-import,.sidebar .side-card{display:none}.sidebar .workspace-label{display:none}}
+@media(prefers-reduced-motion:reduce){.sidebar nav .nav-item,.nav-icon{transition:none}.sidebar nav .nav-item:hover,.nav-item:hover .nav-icon{transform:none}}

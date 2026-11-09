@@ -1,0 +1,1 @@
+{"manifest_version":3,"name":"Currículo Mais Rápido","version":"1.0.0","description":"Preencha campos comuns de candidaturas com seu perfil, após revisar.","permissions":["activeTab","scripting","storage"],"action":{"default_popup":"popup.html","default_title":"Currículo Mais Rápido"}}
